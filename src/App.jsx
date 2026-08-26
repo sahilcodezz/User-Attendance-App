@@ -1,5 +1,6 @@
 import React from 'react'
-import{Routes, Route, BrowserRouter} from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Users from './pages/Users'
 import UserDetails from './pages/UserDetails'
@@ -10,11 +11,15 @@ import Navbar from './component/Navbar'
 const App = () => {
   return (
     <BrowserRouter>
-    <Navbar>
+
+      <Navbar />
+
       <Routes>
-        <Route path="/" element={<Home />}/>
-         <Route path="/users" element={<Users />}/>
-          <Route
+        <Route path="/" element={<Home />} />
+
+        <Route path="/users" element={<Users />} />
+
+        <Route
           path="/users/:id"
           element={<UserDetails />}
         />
@@ -29,9 +34,8 @@ const App = () => {
           element={<Login />}
         />
       </Routes>
-    </Navbar>
+
     </BrowserRouter>
-    
   )
 }
 
