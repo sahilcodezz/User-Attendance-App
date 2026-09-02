@@ -7,6 +7,8 @@ import UserDetails from './pages/UserDetails'
 import AddUser from './pages/AddUser'
 import Login from './pages/Login'
 import Navbar from './component/Navbar'
+import Dashboard from "./pages/Dashboard";
+import Attendance from "./pages/Attendance";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/users" element={<Users />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/attendance" element={<Attendance />} />
 
         <Route
           path="/users/:id"

@@ -7,6 +7,7 @@ const Navbar = () => {
 
   const links = [
     { path: "/", label: "Home" },
+    { path: "/dashboard", label: "Dashboard" },
     { path: "/users", label: "Users" },
     { path: "/add-user", label: "Add User" },
     { path: "/login", label: "Login" },
@@ -29,12 +30,12 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             {links.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
                     ? "bg-indigo-50 text-indigo-700 shadow-sm"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
@@ -62,13 +63,13 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-xl">
-          <div className="px-4 py-3 space-y-1">
+          <div className="px-4 py-4 space-y-2">
             {links.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                className={`block px-5 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
                     ? "bg-indigo-50 text-indigo-700"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
