@@ -7,38 +7,26 @@ import UserDetails from './pages/UserDetails'
 import AddUser from './pages/AddUser'
 import Login from './pages/Login'
 import Navbar from './component/Navbar'
-import Dashboard from "./pages/Dashboard";
-import Attendance from "./pages/Attendance";
+import Dashboard from './pages/Dashboard'
+import Attendance from './pages/Attendance'
+import AttendanceHistory from './pages/AttendanceHistory'
+import Leave from './pages/Leave'
 
 const App = () => {
   return (
     <BrowserRouter>
-
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route path="/users" element={<Users />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/:id" element={<UserDetails />} />
+        <Route path="/add-user" element={<AddUser />} />
         <Route path="/attendance" element={<Attendance />} />
-
-        <Route
-          path="/users/:id"
-          element={<UserDetails />}
-        />
-
-        <Route
-          path="/add-user"
-          element={<AddUser />}
-        />
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+        <Route path="/attendance-history" element={<AttendanceHistory />} />
+        <Route path="/leave" element={<Leave />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-
     </BrowserRouter>
   )
 }
